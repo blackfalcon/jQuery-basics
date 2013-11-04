@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>jQuery Introduction</title>
+	<link rel="stylesheet" href="styles.css" type="text/css" charset="utf-8" />
+</head>
+
+<body>
+	<nav>
+		<a class="form-toggle active" href="#sign_in">Sign In</a>
+		<a class="form-toggle" href="#sign_up">Sign Up</a>
+	</nav>
+
+	<div id="sign_in" class="forms">
+		<h2>Sign In</h2>
+		<form action="/sign_in" method="post">
+			<p>
+				<label for="sign_in_username">Username</label>
+				<input type="text" name="sign_in_username" id="sign_in_username" />
+			</p>
+			<p>
+				<label for="sign_in_password">Password</label>
+				<input type="password" name="sign_in_password" id="sign_in_password" />
+			</p>
+			<p>
+				<input type="submit" value="Sign In" />
+			</p>
+		</form>
+	</div>
+
+	<div id="sign_up" class="forms" style="display: none;">
+		<h2>Sign Up</h2>
+		<form action="/sign_up" method="post">
+			<p>
+				<label for="sign_up_username">Username</label>
+				<input type="text" name="sign_up_username" id="sign_up_username" />
+			</p>
+			<p>
+				<label for="sign_up_password">Password</label>
+				<input type="password" name="sign_up_password" id="sign_up_password" />
+			</p>
+			<p>
+				<label for="sign_up_confirmation">Confirm Password</label>
+				<input type="password" name="sign_up_confirmation" id="sign_up_confirmation" /> <span></span>
+			</p>
+			<p>
+				<label for="terms">I have read terms and conditions</label>
+				<input name="terms" id="terms" type="checkbox"/>
+			</p>
+			<p>
+				<button>Sign up</button>
+			</p>
+		</form>
+	</div>
+
+	<div id="article">
+		<h1>Really Cool Article</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel diam dui. Integer in magna consectetur quam ullamcorper molestie. Nam orci tortor, gravida sit amet tempus nec, malesuada eu est. Duis et vulputate ligula. Nulla a facilisis lorem.</p>
+
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../js/jquery-2.0.3.min.js"><\/script>')</script>
+	<script type="text/javascript" src="application.js"></script>
+</body>
+</html>
