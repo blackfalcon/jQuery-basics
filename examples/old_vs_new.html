@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Old Vs New</title>
+
+</head>
+
+<body onload="javascript:alert('This would be overridden without jQuery')">
+<h1>Obtrusive Javascript - Old Way</h1>
+<h2>Bad</h2>
+<p>
+	<a href="javascript:window.open('popup.html')">Popup</a>
+	<a href="#" onclick="javascript:window.open('popup.html'); return false;">Popup</a>
+</p>
+<h2>Better</h2>
+<p>
+	<a href="popup.html"  onclick="javascript:window.open('popup.html'); return false;">Popup</a>
+</p>
+<h1>Unobtrusive Javascript - New Way</h1>
+<h2>Best</h2>
+<p>
+	<a href="popup.html"  onclick ="alert('This would be overridden without jQuery')" class="new_window">Popup</a>
+</p>
+<script type="text/javascript" charset="utf-8">
+// Unobtrusive way without jQuery
+	window.onload = function() {
+		var anchors = document.getElementsByTagName('a');
+		for(var i = 0; i < anchors.length; i++) {
+			var anchor = anchors[i];
+			if(anchor.className == "new_window") {
+				anchor.onclick = function(){
+					var href = this.href;
+					window.open(href);
+					return false;
+				}
+			}
+		}
+	}
+
+	With jQuery
+	$("a.new_window").click(function(){
+		window.open(this.href);
+		return false;
+	});
+</script>
+
+</body>
+</html>

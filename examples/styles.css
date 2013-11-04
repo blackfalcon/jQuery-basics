@@ -1,0 +1,34 @@
+body {
+	width: 700px;
+	margin: auto;
+}
+
+nav, ul, p, h2, h1 {
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	padding: 10px;
+}
+
+.form-toggle {
+	display:inline-block;
+	background: #333;
+	color: #fff;
+	padding:10px;
+	text-decoration: none;
+}
+
+.fail {
+	border: 2px solid #f00;
+	background-color: orange;
+}
+
+.active {
+	background-color: green;
+}
+
+.form-toggle:hover {
+	text-decoration: underline;
+
+form label {
+	width: 200px;
+	display: inline-block;
+}
